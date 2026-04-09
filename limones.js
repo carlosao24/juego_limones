@@ -27,6 +27,10 @@ function moverIzquierda(){
     personajeX = personajeX - 30;
     actualizarPantalla();
 }
+function moverDerecha(){
+    personajeX = personajeX + 30;
+    actualizarPantalla();
+}
 
 function actualizarPantalla(){
     limpiarCanva();
