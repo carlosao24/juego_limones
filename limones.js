@@ -17,7 +17,7 @@ const ALTO_LIMON = 20;
 function iniciar(){
     dibujarSuelo();
     dibujarPersonaje();
-    pintarLimon();
+    aparecerLimon();
 }
 
 function dibujarSuelo(){
@@ -60,6 +60,7 @@ function pintarLimon(){
 function bajarLimon(){
     limonY = limonY + 10;
     actualizarPantalla();
+    detectarColision();
 }
 
 function detectarColision(){
@@ -67,7 +68,13 @@ function detectarColision(){
         limonX < personajeX + ANCHO_PERSONAJE &&
         limonY +ALTO_LIMON > personajeY &&
         limonY < personajeY + ALTURA_PERSONAJE ){
-        alert("ATRAPADO!!");
+        //alert("ATRAPADO!!");
+        aparecerLimon();
     }
 }
 
+function aparecerLimon(){
+    limonX = generarAletorio(0, canvas.width - ANCHO_LIMON);
+    limonY = 0;
+    actualizarPantalla();
+}
