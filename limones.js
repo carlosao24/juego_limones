@@ -1,5 +1,7 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
+let puntaje = 0;
+let vidas = 3;
 
 const ALTURA_SUELO = 20;
 const ALTURA_PERSONAJE = 60;
@@ -61,6 +63,7 @@ function bajarLimon(){
     limonY = limonY + 10;
     actualizarPantalla();
     detectarColision();
+    detectarPiso();
 }
 
 function detectarColision(){
@@ -70,6 +73,16 @@ function detectarColision(){
         limonY < personajeY + ALTURA_PERSONAJE ){
         //alert("ATRAPADO!!");
         aparecerLimon();
+        puntaje = puntaje + 1;
+        mostrarSpam("txtPuntaje", puntaje);
+    }
+}
+
+function detectarPiso(){
+    if(limonY + ALTO_LIMON == canvas.height - ALTURA_SUELO){
+        aparecerLimon();
+        vidas = vidas - 1;
+        mostrarSpam("txtVidas", vidas);
     }
 }
 

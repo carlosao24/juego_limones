@@ -5,3 +5,8 @@ function generarAletorio(min, max){
     numeroEntero = numeroEntero + min;
     return numeroEntero;
 }
+
+function mostrarSpam(idSpan, valor){
+    let componente = document.getElementById(idSpan);
+    componente.textContent = valor;
+}
