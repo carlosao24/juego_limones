@@ -78,16 +78,19 @@ function detectarColision(){
         puntaje = puntaje + 1;
         mostrarSpam("txtPuntaje", puntaje);
         if(puntaje == 3){
+            clearInterval(intervalo);
             velocidadCaida = velocidadCaida - 50;
-            let intervalo = setInterval(bajarLimon,velocidadCaida);
+            intervalo = setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje == 6){
-            velocidadCaida = velocidadCaida - 100;
-            let intervalo = setInterval(bajarLimon,velocidadCaida);
+            clearInterval(intervalo);
+            velocidadCaida = velocidadCaida - 70;
+            intervalo = setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje == 10){
             alert("GANASTE, TIENES LIMONES, SOLO TE FALTA LOS CAMARONES PARA EL CEVICHE!!");
-            clearInterval(intervalo);
+            reiniciar();
         }
     }
+    
 }
 
 function detectarPiso(){
@@ -108,3 +111,13 @@ function aparecerLimon(){
     actualizarPantalla();
 }
 
+function reiniciar(){
+    clearInterval(intervalo);
+    velocidadCaida = 200
+    puntaje = 0;
+    mostrarSpam("txtPuntaje", puntaje);
+    vidas = 3;
+    mostrarSpam("txtVidas", vidas);
+    actualizarPantalla();
+    iniciar();
+}
