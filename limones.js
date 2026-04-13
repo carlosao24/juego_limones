@@ -15,10 +15,10 @@ let limonX = canvas.width/2;
 let limonY = 5;
 const ANCHO_LIMON = 20;
 const ALTO_LIMON = 20;
-
+let intervalo;
 
 function iniciar(){
-    setInterval(bajarLimon,velocidadCaida);
+    intervalo = setInterval(bajarLimon,velocidadCaida);
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimon();
@@ -79,12 +79,13 @@ function detectarColision(){
         mostrarSpam("txtPuntaje", puntaje);
         if(puntaje == 3){
             velocidadCaida = velocidadCaida - 50;
-            setInterval(bajarLimon,velocidadCaida);
+            let intervalo = setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje == 6){
             velocidadCaida = velocidadCaida - 100;
-            setInterval(bajarLimon,velocidadCaida);
+            let intervalo = setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje == 10){
             alert("GANASTE, TIENES LIMONES, SOLO TE FALTA LOS CAMARONES PARA EL CEVICHE!!");
+            clearInterval(intervalo);
         }
     }
 }
@@ -96,6 +97,7 @@ function detectarPiso(){
         mostrarSpam("txtVidas", vidas);
         if(vidas == 0){
             alert("GAME OVER!!");
+            clearInterval(intervalo);
         }
     }
 }
@@ -105,3 +107,4 @@ function aparecerLimon(){
     limonY = 0;
     actualizarPantalla();
 }
+
