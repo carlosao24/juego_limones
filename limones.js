@@ -2,6 +2,7 @@ let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 let puntaje = 0;
 let vidas = 3;
+let velocidadCaida = 100;
 
 const ALTURA_SUELO = 20;
 const ALTURA_PERSONAJE = 60;
@@ -17,6 +18,7 @@ const ALTO_LIMON = 20;
 
 
 function iniciar(){
+    setInterval(bajarLimon,velocidadCaida);
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimon();
@@ -83,6 +85,9 @@ function detectarPiso(){
         aparecerLimon();
         vidas = vidas - 1;
         mostrarSpam("txtVidas", vidas);
+        if(vidas == 0){
+            alert("GAME OVER!!");
+        }
     }
 }
 
