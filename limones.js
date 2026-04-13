@@ -2,7 +2,7 @@ let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 let puntaje = 0;
 let vidas = 3;
-let velocidadCaida = 100;
+let velocidadCaida = 200;
 
 const ALTURA_SUELO = 20;
 const ALTURA_PERSONAJE = 60;
@@ -77,6 +77,15 @@ function detectarColision(){
         aparecerLimon();
         puntaje = puntaje + 1;
         mostrarSpam("txtPuntaje", puntaje);
+        if(puntaje == 3){
+            velocidadCaida = velocidadCaida - 50;
+            setInterval(bajarLimon,velocidadCaida);
+        }else if(puntaje == 6){
+            velocidadCaida = velocidadCaida - 100;
+            setInterval(bajarLimon,velocidadCaida);
+        }else if(puntaje == 10){
+            alert("GANASTE, TIENES LIMONES, SOLO TE FALTA LOS CAMARONES PARA EL CEVICHE!!");
+        }
     }
 }
 
