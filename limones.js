@@ -87,7 +87,7 @@ function detectarColision(){
             intervalo = setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje == 10){
             alert("GANASTE, TIENES LIMONES, SOLO TE FALTA LOS CAMARONES PARA EL CEVICHE!!");
-            reiniciar();
+            clearInterval(intervalo);
         }
     }
     
