@@ -5,3 +5,6 @@ Para que se vea como una consola antigua pero de edicion con color limon.
 aqui tienes mi html:
 aqui tienes mi css:
 solo quiero modificaciones en el apartado visual, que los botones cambien de color al pasar el cursor sobre ellos, no rompas lo ya hecho.
+
+Prompt 2:
+ahora modifica mi código para css para que tenga una imagen de fondo sin romper lo que ya esta hecho.
