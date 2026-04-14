@@ -1,0 +1,7 @@
+Prompt 1:
+Quiero que me ayudes a mejorar este prompt, quiero que piense como desarrollador UX, 
+quiero que me ayudes con una mejora en la parte visual tanto de los botones como de la pantalla. 
+Para que se vea como una consola antigua pero de edicion con color limon.
+aqui tienes mi html:
+aqui tienes mi css:
+solo quiero modificaciones en el apartado visual, que los botones cambien de color al pasar el cursor sobre ellos, no rompas lo ya hecho.

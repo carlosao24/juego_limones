@@ -1,31 +1,76 @@
+/* Importamos una fuente estilo retro/pixel */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
+  font-family: 'VT323', monospace; /* Fuente de consola antigua */
+  background-color: #0d0d0d;
+  color: #ccff00; /* Color Limón Neón */
   text-align: center;
   margin: 0;
   padding: 20px;
+  text-transform: uppercase;
 }
 
 .contenedor {
   max-width: 800px;
   margin: 0 auto;
+  border: 4px solid #ccff00;
+  padding: 20px;
+  background: #1a1a1a;
+  box-shadow: 0 0 15px rgba(204, 255, 0, 0.2); /* Resplandor suave */
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+  text-shadow: 2px 2px #000;
 }
 
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
+  background-color: #050505;
+  border: 5px solid #ccff00;
   display: block;
   margin: 20px auto;
+  box-shadow: inset 0 0 20px #000; /* Efecto de profundidad en pantalla */
 }
 
+/* Panel de puntaje con estilo de display digital */
 .panel {
   margin: 20px 0;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-top: 1px solid #ccff00;
+  padding-top: 10px;
 }
 
+/* BOTONES ESTILO RETRO */
 .botones button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 16px;
+  font-family: 'VT323', monospace;
+  margin: 8px;
+  padding: 12px 20px;
+  font-size: 1.2rem;
   cursor: pointer;
+  background-color: #0d0d0d;
+  color: #ccff00;
+  border: 2px solid #ccff00;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 4px 4px 0px #4d6100; /* Sombra sólida para efecto 3D */
+}
+
+/* Efecto Hover (Al pasar el mouse) */
+.botones button:hover {
+  background-color: #ccff00;
+  color: #000;
+  box-shadow: 0px 0px 15px #ccff00; /* Brillo neón */
+  transform: translateY(-2px);
+}
+
+/* Efecto Active (Al hacer clic) */
+.botones button:active {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0px #4d6100;
 }
