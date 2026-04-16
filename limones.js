@@ -7,7 +7,7 @@ let velocidadCaida = 200;
 const ALTURA_SUELO = 20;
 const ALTURA_PERSONAJE = 60;
 const ANCHO_PERSONAJE = 40;
-let personajeX = canvas.width/2;
+let personajeX = canvas.width - ANCHO_PERSONAJE;
 let personajeY = canvas.height - (ALTURA_SUELO + ALTURA_PERSONAJE);
 
 //limon
@@ -79,11 +79,11 @@ function detectarColision(){
         mostrarSpam("txtPuntaje", puntaje);
         if(puntaje == 3){
             clearInterval(intervalo);
-            velocidadCaida = velocidadCaida - 50;
+            velocidadCaida = velocidadCaida - 70;
             intervalo = setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje == 6){
             clearInterval(intervalo);
-            velocidadCaida = velocidadCaida - 70;
+            velocidadCaida = velocidadCaida - 100;
             intervalo = setInterval(bajarLimon,velocidadCaida);
         }else if(puntaje == 10){
             alert("GANASTE, TIENES LIMONES, SOLO TE FALTA LOS CAMARONES PARA EL CEVICHE!!");
